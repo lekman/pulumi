@@ -1,0 +1,5 @@
+config:
+  aws:region: cn-north-1
+  vpc:azcount: 2
+  vpc:cidr: 10.41.0.0/16
+  vpc:natcount: 2

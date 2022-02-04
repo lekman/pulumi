@@ -1,0 +1,1302 @@
+{
+  "version": 3,
+  "deployment": {
+    "manifest": {
+      "time": "2021-10-25T10:19:58.198712+01:00",
+      "magic": "8d6865ebb278e5cab43a91df65bc81dd9a7b32bf09de8967d2ccd6c668ee91a2",
+      "version": "v3.16.0"
+    },
+    "secrets_providers": {
+      "type": "service",
+      "state": {
+        "url": "https://api.pulumi.com",
+        "owner": "lekman",
+        "project": "vpc",
+        "stack": "london"
+      }
+    },
+    "resources": [
+      {
+        "urn": "urn:pulumi:london::vpc::pulumi:pulumi:Stack::vpc-london",
+        "custom": false,
+        "type": "pulumi:pulumi:Stack",
+        "outputs": {
+          "private_subnets": [
+            "subnet-0fe575fab53fec04d",
+            "subnet-0d126383d15e9efe1",
+            "subnet-0bd853ab2ca466f32"
+          ],
+          "public_subnets": [
+            "subnet-003249c0eaf680d54",
+            "subnet-0ff6568105e03274f",
+            "subnet-04d02f0335d52ba22"
+          ],
+          "region": "eu-west-2",
+          "vcp_name": "vpc-london",
+          "vpc_cidr": "10.22.0.0/16",
+          "vpc_id": "vpc-0ab20ccbcc945166f"
+        }
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1",
+        "custom": true,
+        "id": "35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "type": "pulumi:providers:aws",
+        "inputs": {
+          "region": "eu-west-2",
+          "version": "4.24.1"
+        },
+        "outputs": {
+          "region": "eu-west-2",
+          "version": "4.24.1"
+        }
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "custom": false,
+        "type": "awsx:x:ec2:Vpc",
+        "parent": "urn:pulumi:london::vpc::pulumi:pulumi:Stack::vpc-london"
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::vpc-london",
+        "custom": false,
+        "type": "awsx:x:ec2:InternetGateway",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london"
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::vpc-london-2",
+        "custom": false,
+        "type": "awsx:x:ec2:NatGateway",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london"
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-0",
+        "custom": false,
+        "type": "awsx:x:ec2:Subnet",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet::vpc-london-private-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::vpc-london-0",
+        "custom": false,
+        "type": "awsx:x:ec2:NatGateway",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london"
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-2",
+        "custom": false,
+        "type": "awsx:x:ec2:Subnet",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet::vpc-london-public-2"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-1",
+        "custom": false,
+        "type": "awsx:x:ec2:Subnet",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet::vpc-london-private-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-0",
+        "custom": false,
+        "type": "awsx:x:ec2:Subnet",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet::vpc-london-public-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-2",
+        "custom": false,
+        "type": "awsx:x:ec2:Subnet",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet::vpc-london-private-2"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-1",
+        "custom": false,
+        "type": "awsx:x:ec2:Subnet",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet::vpc-london-public-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::vpc-london-1",
+        "custom": false,
+        "type": "awsx:x:ec2:NatGateway",
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london"
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway$aws:ec2/eip:Eip::vpc-london-2",
+        "custom": true,
+        "id": "eipalloc-08cd31a963a24d990",
+        "type": "aws:ec2/eip:Eip",
+        "inputs": {
+          "__defaults": [],
+          "tags": {
+            "Name": "vpc-london-2",
+            "__defaults": []
+          },
+          "vpc": true
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"delete\":180000000000,\"read\":900000000000,\"update\":300000000000}}",
+          "associationId": "",
+          "carrierIp": "",
+          "customerOwnedIp": "",
+          "customerOwnedIpv4Pool": "",
+          "domain": "vpc",
+          "id": "eipalloc-08cd31a963a24d990",
+          "instance": "",
+          "networkBorderGroup": "eu-west-2",
+          "networkInterface": "",
+          "privateIp": "",
+          "publicDns": "ec2-18-170-84-177.eu-west-2.compute.amazonaws.com",
+          "publicIp": "18.170.84.177",
+          "publicIpv4Pool": "amazon",
+          "tags": {
+            "Name": "vpc-london-2"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-2"
+          },
+          "vpc": true
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::vpc-london-2",
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "tags": null,
+          "vpc": null
+        }
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway$aws:ec2/eip:Eip::vpc-london-0",
+        "custom": true,
+        "id": "eipalloc-047a5d97b098ba483",
+        "type": "aws:ec2/eip:Eip",
+        "inputs": {
+          "__defaults": [],
+          "tags": {
+            "Name": "vpc-london-0",
+            "__defaults": []
+          },
+          "vpc": true
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"delete\":180000000000,\"read\":900000000000,\"update\":300000000000}}",
+          "associationId": "",
+          "carrierIp": "",
+          "customerOwnedIp": "",
+          "customerOwnedIpv4Pool": "",
+          "domain": "vpc",
+          "id": "eipalloc-047a5d97b098ba483",
+          "instance": "",
+          "networkBorderGroup": "eu-west-2",
+          "networkInterface": "",
+          "privateIp": "",
+          "publicDns": "ec2-18-133-110-179.eu-west-2.compute.amazonaws.com",
+          "publicIp": "18.133.110.179",
+          "publicIpv4Pool": "amazon",
+          "tags": {
+            "Name": "vpc-london-0"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-0"
+          },
+          "vpc": true
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::vpc-london-0",
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "tags": null,
+          "vpc": null
+        }
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway$aws:ec2/eip:Eip::vpc-london-1",
+        "custom": true,
+        "id": "eipalloc-0b8b8c6a8bff4401e",
+        "type": "aws:ec2/eip:Eip",
+        "inputs": {
+          "__defaults": [],
+          "tags": {
+            "Name": "vpc-london-1",
+            "__defaults": []
+          },
+          "vpc": true
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"delete\":180000000000,\"read\":900000000000,\"update\":300000000000}}",
+          "associationId": "",
+          "carrierIp": "",
+          "customerOwnedIp": "",
+          "customerOwnedIpv4Pool": "",
+          "domain": "vpc",
+          "id": "eipalloc-0b8b8c6a8bff4401e",
+          "instance": "",
+          "networkBorderGroup": "eu-west-2",
+          "networkInterface": "",
+          "privateIp": "",
+          "publicDns": "ec2-35-176-197-183.eu-west-2.compute.amazonaws.com",
+          "publicIp": "35.176.197.183",
+          "publicIpv4Pool": "amazon",
+          "tags": {
+            "Name": "vpc-london-1"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-1"
+          },
+          "vpc": true
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::vpc-london-1",
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "tags": null,
+          "vpc": null
+        }
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london",
+        "custom": true,
+        "id": "vpc-0ab20ccbcc945166f",
+        "type": "aws:ec2/vpc:Vpc",
+        "inputs": {
+          "__defaults": [],
+          "assignGeneratedIpv6CidrBlock": false,
+          "cidrBlock": "10.22.0.0/16",
+          "enableDnsHostnames": true,
+          "enableDnsSupport": true,
+          "instanceTenancy": "default",
+          "tags": {
+            "CostCenter": "Core",
+            "Name": "vpc-london",
+            "Stack": "pulumi:vpc/london",
+            "__defaults": []
+          }
+        },
+        "outputs": {
+          "__meta": "{\"schema_version\":\"1\"}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:vpc/vpc-0ab20ccbcc945166f",
+          "assignGeneratedIpv6CidrBlock": false,
+          "cidrBlock": "10.22.0.0/16",
+          "defaultNetworkAclId": "acl-028f48bad6235e25b",
+          "defaultRouteTableId": "rtb-0b3592cd9be8b530e",
+          "defaultSecurityGroupId": "sg-0d983d747cf27dedd",
+          "dhcpOptionsId": "dopt-f9ded491",
+          "enableDnsHostnames": true,
+          "enableDnsSupport": true,
+          "id": "vpc-0ab20ccbcc945166f",
+          "instanceTenancy": "default",
+          "ipv6AssociationId": "",
+          "ipv6CidrBlock": "",
+          "mainRouteTableId": "rtb-0b3592cd9be8b530e",
+          "ownerId": "519705543350",
+          "tags": {
+            "CostCenter": "Core",
+            "Name": "vpc-london",
+            "Stack": "pulumi:vpc/london"
+          },
+          "tagsAll": {
+            "CostCenter": "Core",
+            "Name": "vpc-london",
+            "Stack": "pulumi:vpc/london"
+          }
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc::vpc-london",
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "assignGeneratedIpv6CidrBlock": null,
+          "cidrBlock": null,
+          "enableDnsHostnames": null,
+          "enableDnsSupport": null,
+          "instanceTenancy": null,
+          "tags": null
+        },
+        "aliases": ["urn:pulumi:london::vpc::aws:ec2/vpc:Vpc::vpc-london"]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::vpc-london",
+        "custom": true,
+        "id": "igw-0aa65900fbe06c2eb",
+        "type": "aws:ec2/internetGateway:InternetGateway",
+        "inputs": {
+          "__defaults": [],
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:internet-gateway/igw-0aa65900fbe06c2eb",
+          "id": "igw-0aa65900fbe06c2eb",
+          "ownerId": "519705543350",
+          "tags": {},
+          "tagsAll": {},
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::vpc-london",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        }
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-1",
+        "custom": true,
+        "id": "subnet-0d126383d15e9efe1",
+        "type": "aws:ec2/subnet:Subnet",
+        "inputs": {
+          "__defaults": [],
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2b",
+          "cidrBlock": "10.22.128.0/19",
+          "mapPublicIpOnLaunch": false,
+          "tags": {
+            "Name": "vpc-london-private-1",
+            "__defaults": [],
+            "type": "private"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:subnet/subnet-0d126383d15e9efe1",
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2b",
+          "availabilityZoneId": "euw2-az3",
+          "cidrBlock": "10.22.128.0/19",
+          "customerOwnedIpv4Pool": "",
+          "id": "subnet-0d126383d15e9efe1",
+          "ipv6CidrBlock": "",
+          "ipv6CidrBlockAssociationId": "",
+          "mapCustomerOwnedIpOnLaunch": false,
+          "mapPublicIpOnLaunch": false,
+          "outpostArn": "",
+          "ownerId": "519705543350",
+          "tags": {
+            "Name": "vpc-london-private-1",
+            "type": "private"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-private-1",
+            "type": "private"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-1",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "assignIpv6AddressOnCreation": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ],
+          "availabilityZone": null,
+          "cidrBlock": null,
+          "mapPublicIpOnLaunch": null,
+          "tags": null,
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-2",
+        "custom": true,
+        "id": "rtb-053d9a21eacba94c6",
+        "type": "aws:ec2/routeTable:RouteTable",
+        "inputs": {
+          "__defaults": [],
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:route-table/rtb-053d9a21eacba94c6",
+          "id": "rtb-053d9a21eacba94c6",
+          "ownerId": "519705543350",
+          "propagatingVgws": [],
+          "routes": [],
+          "tags": {},
+          "tagsAll": {},
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-2",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-2"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-0",
+        "custom": true,
+        "id": "subnet-0fe575fab53fec04d",
+        "type": "aws:ec2/subnet:Subnet",
+        "inputs": {
+          "__defaults": [],
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2a",
+          "cidrBlock": "10.22.96.0/19",
+          "mapPublicIpOnLaunch": false,
+          "tags": {
+            "Name": "vpc-london-private-0",
+            "__defaults": [],
+            "type": "private"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:subnet/subnet-0fe575fab53fec04d",
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2a",
+          "availabilityZoneId": "euw2-az2",
+          "cidrBlock": "10.22.96.0/19",
+          "customerOwnedIpv4Pool": "",
+          "id": "subnet-0fe575fab53fec04d",
+          "ipv6CidrBlock": "",
+          "ipv6CidrBlockAssociationId": "",
+          "mapCustomerOwnedIpOnLaunch": false,
+          "mapPublicIpOnLaunch": false,
+          "outpostArn": "",
+          "ownerId": "519705543350",
+          "tags": {
+            "Name": "vpc-london-private-0",
+            "type": "private"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-private-0",
+            "type": "private"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-0",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "assignIpv6AddressOnCreation": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ],
+          "availabilityZone": null,
+          "cidrBlock": null,
+          "mapPublicIpOnLaunch": null,
+          "tags": null,
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-2",
+        "custom": true,
+        "id": "rtb-0fdba2d5050ec86e5",
+        "type": "aws:ec2/routeTable:RouteTable",
+        "inputs": {
+          "__defaults": [],
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:route-table/rtb-0fdba2d5050ec86e5",
+          "id": "rtb-0fdba2d5050ec86e5",
+          "ownerId": "519705543350",
+          "propagatingVgws": [],
+          "routes": [],
+          "tags": {},
+          "tagsAll": {},
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-2",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-2"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-0",
+        "custom": true,
+        "id": "rtb-077a99bfce1af4468",
+        "type": "aws:ec2/routeTable:RouteTable",
+        "inputs": {
+          "__defaults": [],
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:route-table/rtb-077a99bfce1af4468",
+          "id": "rtb-077a99bfce1af4468",
+          "ownerId": "519705543350",
+          "propagatingVgws": [],
+          "routes": [],
+          "tags": {},
+          "tagsAll": {},
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-0",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-1",
+        "custom": true,
+        "id": "rtb-0d2d81fc4a4061725",
+        "type": "aws:ec2/routeTable:RouteTable",
+        "inputs": {
+          "__defaults": [],
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:route-table/rtb-0d2d81fc4a4061725",
+          "id": "rtb-0d2d81fc4a4061725",
+          "ownerId": "519705543350",
+          "propagatingVgws": [],
+          "routes": [],
+          "tags": {},
+          "tagsAll": {},
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-1",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-0",
+        "custom": true,
+        "id": "rtb-0f2ab038f39bee24a",
+        "type": "aws:ec2/routeTable:RouteTable",
+        "inputs": {
+          "__defaults": [],
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:route-table/rtb-0f2ab038f39bee24a",
+          "id": "rtb-0f2ab038f39bee24a",
+          "ownerId": "519705543350",
+          "propagatingVgws": [],
+          "routes": [],
+          "tags": {},
+          "tagsAll": {},
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-0",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-1",
+        "custom": true,
+        "id": "rtb-054d90fd6a4cf919b",
+        "type": "aws:ec2/routeTable:RouteTable",
+        "inputs": {
+          "__defaults": [],
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:route-table/rtb-054d90fd6a4cf919b",
+          "id": "rtb-054d90fd6a4cf919b",
+          "ownerId": "519705543350",
+          "propagatingVgws": [],
+          "routes": [],
+          "tags": {},
+          "tagsAll": {},
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-1",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-2",
+        "custom": true,
+        "id": "subnet-0bd853ab2ca466f32",
+        "type": "aws:ec2/subnet:Subnet",
+        "inputs": {
+          "__defaults": [],
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2c",
+          "cidrBlock": "10.22.160.0/19",
+          "mapPublicIpOnLaunch": false,
+          "tags": {
+            "Name": "vpc-london-private-2",
+            "__defaults": [],
+            "type": "private"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:subnet/subnet-0bd853ab2ca466f32",
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2c",
+          "availabilityZoneId": "euw2-az1",
+          "cidrBlock": "10.22.160.0/19",
+          "customerOwnedIpv4Pool": "",
+          "id": "subnet-0bd853ab2ca466f32",
+          "ipv6CidrBlock": "",
+          "ipv6CidrBlockAssociationId": "",
+          "mapCustomerOwnedIpOnLaunch": false,
+          "mapPublicIpOnLaunch": false,
+          "outpostArn": "",
+          "ownerId": "519705543350",
+          "tags": {
+            "Name": "vpc-london-private-2",
+            "type": "private"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-private-2",
+            "type": "private"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-2",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "assignIpv6AddressOnCreation": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ],
+          "availabilityZone": null,
+          "cidrBlock": null,
+          "mapPublicIpOnLaunch": null,
+          "tags": null,
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-2"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::vpc-london-public-2-ig",
+        "custom": true,
+        "id": "r-rtb-0fdba2d5050ec86e51080289494",
+        "type": "aws:ec2/route:Route",
+        "inputs": {
+          "__defaults": [],
+          "destinationCidrBlock": "0.0.0.0/0",
+          "gatewayId": "igw-0aa65900fbe06c2eb",
+          "routeTableId": "rtb-0fdba2d5050ec86e5"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "carrierGatewayId": "",
+          "destinationCidrBlock": "0.0.0.0/0",
+          "destinationIpv6CidrBlock": "",
+          "destinationPrefixListId": "",
+          "egressOnlyGatewayId": "",
+          "gatewayId": "igw-0aa65900fbe06c2eb",
+          "id": "r-rtb-0fdba2d5050ec86e51080289494",
+          "instanceId": "",
+          "instanceOwnerId": "",
+          "localGatewayId": "",
+          "natGatewayId": "",
+          "networkInterfaceId": "",
+          "origin": "CreateRoute",
+          "routeTableId": "rtb-0fdba2d5050ec86e5",
+          "state": "active",
+          "transitGatewayId": "",
+          "vpcEndpointId": "",
+          "vpcPeeringConnectionId": ""
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-2",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::vpc-london",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-2"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "destinationCidrBlock": null,
+          "gatewayId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::vpc-london"
+          ],
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-2"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/route:Route::vpc-london-public-2-ig"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-private-0",
+        "custom": true,
+        "id": "rtbassoc-0fee1d2198247ad17",
+        "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+        "inputs": {
+          "__defaults": [],
+          "routeTableId": "rtb-077a99bfce1af4468",
+          "subnetId": "subnet-0fe575fab53fec04d"
+        },
+        "outputs": {
+          "gatewayId": "",
+          "id": "rtbassoc-0fee1d2198247ad17",
+          "routeTableId": "rtb-077a99bfce1af4468",
+          "subnetId": "subnet-0fe575fab53fec04d"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-0",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-0",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-0"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-0"
+          ],
+          "subnetId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-0"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-private-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-private-1",
+        "custom": true,
+        "id": "rtbassoc-0cbeb0a4519af52fb",
+        "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+        "inputs": {
+          "__defaults": [],
+          "routeTableId": "rtb-0d2d81fc4a4061725",
+          "subnetId": "subnet-0d126383d15e9efe1"
+        },
+        "outputs": {
+          "gatewayId": "",
+          "id": "rtbassoc-0cbeb0a4519af52fb",
+          "routeTableId": "rtb-0d2d81fc4a4061725",
+          "subnetId": "subnet-0d126383d15e9efe1"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-1",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-1",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-1"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-1"
+          ],
+          "subnetId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-1"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-private-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::vpc-london-public-0-ig",
+        "custom": true,
+        "id": "r-rtb-0f2ab038f39bee24a1080289494",
+        "type": "aws:ec2/route:Route",
+        "inputs": {
+          "__defaults": [],
+          "destinationCidrBlock": "0.0.0.0/0",
+          "gatewayId": "igw-0aa65900fbe06c2eb",
+          "routeTableId": "rtb-0f2ab038f39bee24a"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "carrierGatewayId": "",
+          "destinationCidrBlock": "0.0.0.0/0",
+          "destinationIpv6CidrBlock": "",
+          "destinationPrefixListId": "",
+          "egressOnlyGatewayId": "",
+          "gatewayId": "igw-0aa65900fbe06c2eb",
+          "id": "r-rtb-0f2ab038f39bee24a1080289494",
+          "instanceId": "",
+          "instanceOwnerId": "",
+          "localGatewayId": "",
+          "natGatewayId": "",
+          "networkInterfaceId": "",
+          "origin": "CreateRoute",
+          "routeTableId": "rtb-0f2ab038f39bee24a",
+          "state": "active",
+          "transitGatewayId": "",
+          "vpcEndpointId": "",
+          "vpcPeeringConnectionId": ""
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-0",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::vpc-london",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-0"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "destinationCidrBlock": null,
+          "gatewayId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::vpc-london"
+          ],
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-0"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/route:Route::vpc-london-public-0-ig"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::vpc-london-public-1-ig",
+        "custom": true,
+        "id": "r-rtb-054d90fd6a4cf919b1080289494",
+        "type": "aws:ec2/route:Route",
+        "inputs": {
+          "__defaults": [],
+          "destinationCidrBlock": "0.0.0.0/0",
+          "gatewayId": "igw-0aa65900fbe06c2eb",
+          "routeTableId": "rtb-054d90fd6a4cf919b"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":120000000000,\"delete\":300000000000,\"update\":120000000000}}",
+          "carrierGatewayId": "",
+          "destinationCidrBlock": "0.0.0.0/0",
+          "destinationIpv6CidrBlock": "",
+          "destinationPrefixListId": "",
+          "egressOnlyGatewayId": "",
+          "gatewayId": "igw-0aa65900fbe06c2eb",
+          "id": "r-rtb-054d90fd6a4cf919b1080289494",
+          "instanceId": "",
+          "instanceOwnerId": "",
+          "localGatewayId": "",
+          "natGatewayId": "",
+          "networkInterfaceId": "",
+          "origin": "CreateRoute",
+          "routeTableId": "rtb-054d90fd6a4cf919b",
+          "state": "active",
+          "transitGatewayId": "",
+          "vpcEndpointId": "",
+          "vpcPeeringConnectionId": ""
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-1",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::vpc-london",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-1"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "destinationCidrBlock": null,
+          "gatewayId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::vpc-london"
+          ],
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-1"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/route:Route::vpc-london-public-1-ig"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-private-2",
+        "custom": true,
+        "id": "rtbassoc-00fa3c647bed9ca85",
+        "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+        "inputs": {
+          "__defaults": [],
+          "routeTableId": "rtb-053d9a21eacba94c6",
+          "subnetId": "subnet-0bd853ab2ca466f32"
+        },
+        "outputs": {
+          "gatewayId": "",
+          "id": "rtbassoc-00fa3c647bed9ca85",
+          "routeTableId": "rtb-053d9a21eacba94c6",
+          "subnetId": "subnet-0bd853ab2ca466f32"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-private-2",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-2",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-2"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-private-2"
+          ],
+          "subnetId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-private-2"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-private-2"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-1",
+        "custom": true,
+        "id": "subnet-0ff6568105e03274f",
+        "type": "aws:ec2/subnet:Subnet",
+        "inputs": {
+          "__defaults": [],
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2b",
+          "cidrBlock": "10.22.32.0/19",
+          "mapPublicIpOnLaunch": true,
+          "tags": {
+            "Name": "vpc-london-public-1",
+            "__defaults": [],
+            "type": "public"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:subnet/subnet-0ff6568105e03274f",
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2b",
+          "availabilityZoneId": "euw2-az3",
+          "cidrBlock": "10.22.32.0/19",
+          "customerOwnedIpv4Pool": "",
+          "id": "subnet-0ff6568105e03274f",
+          "ipv6CidrBlock": "",
+          "ipv6CidrBlockAssociationId": "",
+          "mapCustomerOwnedIpOnLaunch": false,
+          "mapPublicIpOnLaunch": true,
+          "outpostArn": "",
+          "ownerId": "519705543350",
+          "tags": {
+            "Name": "vpc-london-public-1",
+            "type": "public"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-public-1",
+            "type": "public"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-1",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "assignIpv6AddressOnCreation": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ],
+          "availabilityZone": null,
+          "cidrBlock": null,
+          "mapPublicIpOnLaunch": null,
+          "tags": null,
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-0",
+        "custom": true,
+        "id": "subnet-003249c0eaf680d54",
+        "type": "aws:ec2/subnet:Subnet",
+        "inputs": {
+          "__defaults": [],
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2a",
+          "cidrBlock": "10.22.0.0/19",
+          "mapPublicIpOnLaunch": true,
+          "tags": {
+            "Name": "vpc-london-public-0",
+            "__defaults": [],
+            "type": "public"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:subnet/subnet-003249c0eaf680d54",
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2a",
+          "availabilityZoneId": "euw2-az2",
+          "cidrBlock": "10.22.0.0/19",
+          "customerOwnedIpv4Pool": "",
+          "id": "subnet-003249c0eaf680d54",
+          "ipv6CidrBlock": "",
+          "ipv6CidrBlockAssociationId": "",
+          "mapCustomerOwnedIpOnLaunch": false,
+          "mapPublicIpOnLaunch": true,
+          "outpostArn": "",
+          "ownerId": "519705543350",
+          "tags": {
+            "Name": "vpc-london-public-0",
+            "type": "public"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-public-0",
+            "type": "public"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-0",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "assignIpv6AddressOnCreation": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ],
+          "availabilityZone": null,
+          "cidrBlock": null,
+          "mapPublicIpOnLaunch": null,
+          "tags": null,
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-2",
+        "custom": true,
+        "id": "subnet-04d02f0335d52ba22",
+        "type": "aws:ec2/subnet:Subnet",
+        "inputs": {
+          "__defaults": [],
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2c",
+          "cidrBlock": "10.22.64.0/19",
+          "mapPublicIpOnLaunch": true,
+          "tags": {
+            "Name": "vpc-london-public-2",
+            "__defaults": [],
+            "type": "public"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "outputs": {
+          "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+          "arn": "arn:aws:ec2:eu-west-2:519705543350:subnet/subnet-04d02f0335d52ba22",
+          "assignIpv6AddressOnCreation": false,
+          "availabilityZone": "eu-west-2c",
+          "availabilityZoneId": "euw2-az1",
+          "cidrBlock": "10.22.64.0/19",
+          "customerOwnedIpv4Pool": "",
+          "id": "subnet-04d02f0335d52ba22",
+          "ipv6CidrBlock": "",
+          "ipv6CidrBlockAssociationId": "",
+          "mapCustomerOwnedIpOnLaunch": false,
+          "mapPublicIpOnLaunch": true,
+          "outpostArn": "",
+          "ownerId": "519705543350",
+          "tags": {
+            "Name": "vpc-london-public-2",
+            "type": "public"
+          },
+          "tagsAll": {
+            "Name": "vpc-london-public-2",
+            "type": "public"
+          },
+          "vpcId": "vpc-0ab20ccbcc945166f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-2",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "assignIpv6AddressOnCreation": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ],
+          "availabilityZone": null,
+          "cidrBlock": null,
+          "mapPublicIpOnLaunch": null,
+          "tags": null,
+          "vpcId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::vpc-london"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-2"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-public-1",
+        "custom": true,
+        "id": "rtbassoc-0d2312096fbf65c77",
+        "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+        "inputs": {
+          "__defaults": [],
+          "routeTableId": "rtb-054d90fd6a4cf919b",
+          "subnetId": "subnet-0ff6568105e03274f"
+        },
+        "outputs": {
+          "gatewayId": "",
+          "id": "rtbassoc-0d2312096fbf65c77",
+          "routeTableId": "rtb-054d90fd6a4cf919b",
+          "subnetId": "subnet-0ff6568105e03274f"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-1",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-1",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-1"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-1"
+          ],
+          "subnetId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-1"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-public-1"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-public-0",
+        "custom": true,
+        "id": "rtbassoc-018ced78fa4f9299d",
+        "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+        "inputs": {
+          "__defaults": [],
+          "routeTableId": "rtb-0f2ab038f39bee24a",
+          "subnetId": "subnet-003249c0eaf680d54"
+        },
+        "outputs": {
+          "gatewayId": "",
+          "id": "rtbassoc-018ced78fa4f9299d",
+          "routeTableId": "rtb-0f2ab038f39bee24a",
+          "subnetId": "subnet-003249c0eaf680d54"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-0",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-0",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-0"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-0"
+          ],
+          "subnetId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-0"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-public-0"
+        ]
+      },
+      {
+        "urn": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-public-2",
+        "custom": true,
+        "id": "rtbassoc-089ba858317d0e7bf",
+        "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+        "inputs": {
+          "__defaults": [],
+          "routeTableId": "rtb-0fdba2d5050ec86e5",
+          "subnetId": "subnet-04d02f0335d52ba22"
+        },
+        "outputs": {
+          "gatewayId": "",
+          "id": "rtbassoc-089ba858317d0e7bf",
+          "routeTableId": "rtb-0fdba2d5050ec86e5",
+          "subnetId": "subnet-04d02f0335d52ba22"
+        },
+        "parent": "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::vpc-london-public-2",
+        "dependencies": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-2",
+          "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-2"
+        ],
+        "provider": "urn:pulumi:london::vpc::pulumi:providers:aws::default_4_24_1::35695716-1d52-4932-ab6a-a0a0682d3e45",
+        "propertyDependencies": {
+          "routeTableId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::vpc-london-public-2"
+          ],
+          "subnetId": [
+            "urn:pulumi:london::vpc::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::vpc-london-public-2"
+          ]
+        },
+        "aliases": [
+          "urn:pulumi:london::vpc::awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::vpc-london-public-2"
+        ]
+      }
+    ],
+    "pending_operations": []
+  }
+}

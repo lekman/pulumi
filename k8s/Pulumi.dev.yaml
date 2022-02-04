@@ -1,0 +1,7 @@
+config:
+  aws:region: eu-west-2
+  environment:name: dev
+  k8s:desiredCapacity: 2
+  k8s:maxSize: 5
+  k8s:name: devops
+  stack:parent: lekman/vpc/dev

@@ -1,0 +1,17 @@
+name: vpc
+runtime: nodejs
+description: Deploys a redundant, multi-az VPC with public and private subnet(s).
+template:
+  config:
+    vpc:cidr:
+      description: Subnet address space definition for VPC. Change B net address to be unique per region.
+      default: 10.11.0.0/16
+    vpc:azcount:
+      description: Number of availability zones
+      default: 2
+    vpc:natcount:
+      description: Number of NAT gateways
+      default: 2
+    costcenter:
+      description: The cost center to attribute billing to.
+      default: Core

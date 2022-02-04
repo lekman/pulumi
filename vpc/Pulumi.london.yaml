@@ -1,0 +1,4 @@
+config:
+  aws:region: eu-west-2
+  vpc:azs: 3
+  vpc:cidr: 10.22.0.0/16

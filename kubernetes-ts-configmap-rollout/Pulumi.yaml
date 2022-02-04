@@ -1,0 +1,4 @@
+name: k8s-configmap
+runtime: nodejs
+description: A Deployment that mounts a ConfigMap; updating the data in the ConfigMap
+  triggers a rollout of the Deployment

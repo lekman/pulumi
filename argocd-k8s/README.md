@@ -1,0 +1,1 @@
+https://pulumi.awsworkshop.io/additional-content/150_deploying_argocd_to_eks/30_declare_argocd_helm_chart.html

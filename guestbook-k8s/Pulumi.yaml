@@ -1,0 +1,8 @@
+name: guestbook-k8s
+runtime: nodejs
+description: Kubernetes deployment of Guestbook
+template:
+  config:
+    isMinikube:
+      description: Whether you are deploying to minikube
+      default: true

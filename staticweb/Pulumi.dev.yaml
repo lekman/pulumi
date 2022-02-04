@@ -1,0 +1,6 @@
+config:
+  aws:region: eu-west-2
+  environment:name: dev
+  static-website:targetDomain: static.lekman.link
+  static-website:pathToWebsiteContents: ./www
+  static-website:includeWWW: false

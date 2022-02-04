@@ -1,0 +1,13 @@
+{
+  "name": "guestbook-k8s",
+  "version": "0.1.0",
+  "devDependencies": {
+    "@types/node": "^12.0.0"
+  },
+  "dependencies": {
+    "@pulumi/eks": "^0.36.0",
+    "@pulumi/kubernetes": "^3.0.0",
+    "@pulumi/pulumi": "^3.0.0"
+  },
+  "license": "MIT"
+}

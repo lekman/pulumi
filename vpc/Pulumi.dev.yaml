@@ -1,0 +1,5 @@
+config:
+  aws:region: eu-west-2
+  vpc:azcount: 2
+  vpc:cidr: 10.10.0.0/16
+  vpc:natcount: 2
