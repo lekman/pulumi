@@ -1,0 +1,3 @@
+name: ecs
+runtime: nodejs
+description: Creates an ECS cluster in AWS
