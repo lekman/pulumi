@@ -33,17 +33,12 @@ interface IConfig {
   region: string;
   environment: string;
   project: string;
+  stack: string;
   numberNodes: number;
   costCenter: string;
-  vpc: INameIdentidifer;
-}
-
-/**
- * Name/ID configuration object.
- */
-interface INameIdentidifer {
-  name: pulumi.Output<string>;
-  id: pulumi.Output<string>;
+  vpc_name: string;
+  vpc_cidr: string;
+  vpc_zone_count: number;
 }
 
 //#endregion
@@ -58,39 +53,24 @@ interface INameIdentidifer {
 let getConfig = (): IConfig => {
   const stack = pulumi.getStack();
   const project = pulumi.getProject();
-  const stackConfig = new pulumi.Config("stack");
   const awsConfig = new pulumi.Config("aws");
-
-  // Connect stack reference to parent for VPC, see https://www.pulumi.com/docs/intro/concepts/stack/
-  const vpcStack = new pulumi.StackReference(stackConfig.require("parent-vpc"));
+  const vpc = new pulumi.Config("vpc");
 
   // Build configuration parameters for entire deployment
   const config: IConfig = {
     region: awsConfig.require("region"),
     environment: stack,
     project: project,
+    stack: stack,
     numberNodes: 2,
     costCenter: new pulumi.Config().get("costcenter") ?? "Core",
-    vpc: {
-      id: vpcStack.requireOutput("vpc_id").apply<string>((id) => id.toString()),
-      name: vpcStack.getOutput("vpc_name").apply<string>((name) => name),
-    },
+    vpc_name: project + "-" + stack,
+    vpc_cidr: vpc.require<string>("cidr"),
+    vpc_zone_count: vpc.requireNumber("zone_count"),
   };
 
   return config;
 };
-
-/**
- * Gets an existing VPC.
- *
- * @return {*}  {pulumi.Output<awsx.ec2.Vpc>}
- */
-let getVpc = (config: IConfig): pulumi.Output<awsx.ec2.Vpc> =>
-  pulumi.all([config.vpc.name, config.vpc.id]).apply(([vpc_name, vpc_id]) =>
-    awsx.ec2.Vpc.fromExistingIds(vpc_name, {
-      vpcId: vpc_id,
-    })
-  );
 
 /**
  * Cretes the roles and role policies needed for the cluster.
@@ -190,7 +170,16 @@ let setRoles = (): IRoles => {
 //#endregion
 
 const config = getConfig();
-const vpc = getVpc(config);
+const vpc = new awsx.ec2.Vpc(config.vpc_name, {
+  cidrBlock: config.vpc_cidr,
+  numberOfAvailabilityZones: config.vpc_zone_count,
+  numberOfNatGateways: 2,
+  tags: {
+    Name: `${config.vpc_name}`,
+    CostCenter: `${config.costCenter}`,
+    Stack: `pulumi:${config.project}/${config.stack}`,
+  },
+});
 export const vpc_id = vpc.id;
 
 // Set IAM roles
